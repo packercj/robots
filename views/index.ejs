@@ -9,8 +9,27 @@
     <div class="row">
       <div class="col s12 m4">
         <h3>Add Robot</h3>
-          <form>
+          <form action="/" method="post">
+            <input placeholder="Robot Name" name="name"></input>
+            <!--<input placeholder="Robot Model" name="model"></input>-->
+            <button class="btn btn-waves" type="submit">Add Your Robot</button>
+          </form>
       </div>
+      <table class="table col s12 m8">
+        <thead>
+            <th>Robot</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+          <% robots.forEach(function(robot){ %>
+            <% var href = '/delete/' + robot.replace(/ /g, '%20') %>
+            <tr>
+              <td> <%= robot %> </td>
+              <td><a href=<%= href %> >Delete</a></td>
+            </tr>
+          <%  }); %>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

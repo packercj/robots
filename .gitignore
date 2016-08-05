@@ -34,3 +34,5 @@ npm-debug.log
 public/.DS_Store
 
 public/stylesheets/materialize.min.css
+
+dump.rdb
